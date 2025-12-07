@@ -33,10 +33,12 @@ pipeline {
         }
 
         stage('Deploy to Kubernetes') {
-            steps {
-                sh 'kubectl apply -f k8s-deployment.yaml'
-            }
+    steps {
+        withEnv(["KUBECONFIG=/var/lib/jenkins/.kube/config"]) {
+            sh 'kubectl apply -f k8s-deployment.yaml'
         }
+    }
+}
     }
 }
 
