@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ecommerce-app
-        image: mohammedsaif1989@gmail.com/ecommerce-app:latest
+        image: saifn7/ecommerce-app:latest
         ports:
         - containerPort: 3000
 ---
