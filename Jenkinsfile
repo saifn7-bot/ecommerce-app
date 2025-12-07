@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/saifn7-bot/ecommerce-app.git'
+                // Explicitly use main branch and credentials if required
+                git branch: 'main',
+                    url: 'https://github.com/saifn7-bot/ecommerce-app.git',
+                    credentialsId: 'Github'  // Only if your repo is private
             }
         }
 
